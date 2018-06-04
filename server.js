@@ -21,9 +21,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use((req, res, next) => {
-    res.render('maintenence.hbs');
-});
+// app.use((req, res, next) => {
+//     res.render('maintenence.hbs');
+// });
 hbs.registerHelper('getCurrentYear', () => {
     return new Date().getFullYear();
 })
@@ -45,6 +45,12 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About Page',
+    });
+});
+
+app.get('/project', (req, res) => {
+    res.render('project.hbs', {
+        pageTitle: 'Project Page',
     });
 });
 
